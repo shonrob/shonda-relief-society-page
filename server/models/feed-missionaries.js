@@ -7,3 +7,5 @@ const feedMissionariesSchema = mongoose.Schema({
   phoneNumber: { type: String },
   address: { type: String },
 });
+
+module.exports = mongoose.model("FeedMissionaries", feedMissionariesSchema);
