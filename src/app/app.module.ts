@@ -12,9 +12,15 @@ import { AppComponent } from './app.component';
 import { FeedMissionariesComponent } from './feed-missionaries/feed-missionaries.component';
 import { HeadersComponent } from './headers/headers.component';
 import { HomeComponent } from './home/home.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [AppComponent, HeadersComponent, FeedMissionariesComponent, HomeComponent],
+  declarations: [
+    AppComponent,
+    HeadersComponent,
+    FeedMissionariesComponent,
+    HomeComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -23,6 +29,7 @@ import { HomeComponent } from './home/home.component';
     MatNativeDateModule,
     MatInputModule,
     TabMenuModule,
+    HttpClientModule,
   ],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],

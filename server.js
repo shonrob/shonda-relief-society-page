@@ -1,10 +1,10 @@
-var express = require("express");
-var path = require("path");
-var http = require("http");
-
-var cookieParser = require("cookie-parser");
-var logger = require("morgan");
-var dotenv = requre("mongoose");
+const express = require("express");
+const path = require("path");
+const http = require("http");
+const cookieParser = require("cookie-parser");
+const logger = require("morgan");
+const dotenv = require("dotenv");
+const mongoose = require("mongoose");
 
 dotenv.config();
 
@@ -14,7 +14,7 @@ mongoose
   .catch((err) => console.log("Connection failed to Database:", err));
 
 // importing the routing file to handle the default index route
-var index = require("./server/app");
+const index = require("./server/app");
 
 // Importing Routing files here
 const feedMissionariesRoutes = require("./server/routes/feed-missionaries");
