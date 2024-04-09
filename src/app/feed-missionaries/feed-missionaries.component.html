@@ -1,6 +1,12 @@
-<p>feed-missionaries works!</p>
+<!-- <p>feed-missionaries works!</p> -->
 <div>
   <ul>
     <li *ngFor="let meal of mealsList">{{ meal.name }}</li>
   </ul>
+</div>
+<div>
+  <button (click)="openForm()">Sign-Up</button>
+</div>
+<div *ngIf="showForm">
+  <app-meal-form></app-meal-form>
 </div>

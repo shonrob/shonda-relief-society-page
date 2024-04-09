@@ -9,6 +9,7 @@ import { Meal } from './feed-missionaries.model';
 })
 export class FeedMissionariesComponent {
   mealsList: Meal[] = [];
+  showForm: boolean = false;
 
   constructor(private feedMissionariesService: FeedMissionariesService) {}
 
@@ -19,5 +20,9 @@ export class FeedMissionariesComponent {
         this.mealsList = mealListReturn.schedule;
         console.log(mealListReturn);
       });
+  }
+
+  openForm() {
+    this.showForm = !this.showForm;
   }
 }

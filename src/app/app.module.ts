@@ -13,6 +13,7 @@ import { FeedMissionariesComponent } from './feed-missionaries/feed-missionaries
 import { HeadersComponent } from './headers/headers.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { MealFormComponent } from './feed-missionaries/meal-form/meal-form.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     HeadersComponent,
     FeedMissionariesComponent,
     HomeComponent,
+    MealFormComponent,
   ],
   imports: [
     BrowserModule,
