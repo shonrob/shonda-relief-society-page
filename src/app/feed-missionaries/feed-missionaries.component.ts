@@ -16,7 +16,7 @@ export class FeedMissionariesComponent {
     this.feedMissionariesService
       .getMissionaryMeals()
       .subscribe((mealListReturn) => {
-        this.mealsList = mealListReturn;
+        this.mealsList = mealListReturn.schedule;
         console.log(mealListReturn);
       });
   }

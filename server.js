@@ -56,7 +56,7 @@ app.use(
 app.use("/", index);
 
 // Code to MAP the URL's to Routing files here
-app.use("/server/routes/feed-missionaries", feedMissionariesRoutes);
+app.use("/server/feed-missionaries", feedMissionariesRoutes);
 
 // Tell express to map all other non-defined routes back to the index file page
 app.get("*", (req, res) => {

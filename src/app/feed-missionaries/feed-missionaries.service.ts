@@ -6,11 +6,11 @@ import { Meal } from './feed-missionaries.model';
   providedIn: 'root',
 })
 export class FeedMissionariesService {
-  apiUrl = 'http://localhost:3000/server/feed-missionaries';
+  private apiUrl = 'http://localhost:3000/server/feed-missionaries';
 
   constructor(private httpClient: HttpClient) {}
 
   getMissionaryMeals() {
-    return this.httpClient.get<Meal[]>(`${this.apiUrl}`);
+    return this.httpClient.get<any>(`${this.apiUrl}`);
   }
 }
