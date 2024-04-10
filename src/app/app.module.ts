@@ -14,6 +14,7 @@ import { HeadersComponent } from './headers/headers.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { MealFormComponent } from './feed-missionaries/meal-form/meal-form.component';
+import { MealItemComponent } from './feed-missionaries/meal-item/meal-item.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { MealFormComponent } from './feed-missionaries/meal-form/meal-form.compo
     FeedMissionariesComponent,
     HomeComponent,
     MealFormComponent,
+    MealItemComponent,
   ],
   imports: [
     BrowserModule,

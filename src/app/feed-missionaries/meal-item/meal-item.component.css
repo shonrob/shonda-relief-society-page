@@ -1,0 +1,16 @@
+.mealItem {
+  margin: 15px;
+  border: 1px solid gray;
+  width: fit-content;
+}
+
+.mealItem a {
+  padding: 10px;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+
+.mealItem div {
+  width: fit-content;
+}
