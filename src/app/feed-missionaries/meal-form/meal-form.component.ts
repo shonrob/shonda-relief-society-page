@@ -47,18 +47,18 @@ export class MealFormComponent {
     let value = form.value; //retrieving the value the user inputs in the forms field
     let newMeal = new Meal(
       null,
-      value.date,
-      value.time,
       value.name,
-      value.address,
-      value.phoneNumber
+      value.date,
+      '5:00pm',
+      value.phoneNumber,
+      value.address
     );
     if (this.editMode) {
       this.mealService.updateMeal(this.originalMeal, newMeal);
     } else {
       this.mealService.addMeal(newMeal);
     }
-    this.router.navigate(['/feed-missionaries']);
+    this.router.navigate(['/feedmissionaries']);
   }
 
   // cancel the form and route back to the main meals component.

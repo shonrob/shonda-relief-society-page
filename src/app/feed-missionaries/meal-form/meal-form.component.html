@@ -58,5 +58,9 @@
         required
       />
     </mat-form-field>
+    <div class="btnContainer">
+      <button class="" type="submit" [disabled]="!f.valid">Save</button>
+      <button class="" type="button" (click)="onCancel()">Cancel</button>
+    </div>
   </form>
 </div>

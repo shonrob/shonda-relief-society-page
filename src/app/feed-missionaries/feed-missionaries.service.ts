@@ -53,6 +53,7 @@ export class FeedMissionariesService {
       })
       .subscribe((responseData) => {
         // add new meal to meals
+        console.log('Here I Am', responseData.meal);
         this.meals.push(responseData.meal);
         this.sortAndSend();
       });
