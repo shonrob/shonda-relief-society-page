@@ -6,15 +6,18 @@ import { MatInputModule } from '@angular/material/input';
 import { BrowserModule } from '@angular/platform-browser';
 import { TabMenuModule } from 'primeng/tabmenu';
 
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { HttpClientModule } from '@angular/common/http';
+import { MatButtonModule } from '@angular/material/button';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FeedMissionariesComponent } from './feed-missionaries/feed-missionaries.component';
-import { HeadersComponent } from './headers/headers.component';
-import { HomeComponent } from './home/home.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { MealFormComponent } from './feed-missionaries/meal-form/meal-form.component';
 import { MealItemComponent } from './feed-missionaries/meal-item/meal-item.component';
+import { HeadersComponent } from './headers/headers.component';
+import { HomeComponent } from './home/home.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -34,6 +37,9 @@ import { MealItemComponent } from './feed-missionaries/meal-item/meal-item.compo
     MatInputModule,
     TabMenuModule,
     HttpClientModule,
+    MatButtonModule,
+    ScrollingModule,
+    MatIconModule,
   ],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],

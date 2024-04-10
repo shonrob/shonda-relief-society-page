@@ -1,66 +1,82 @@
-<div>
-  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-    <mat-form-field>
-      <mat-label for="date">Date</mat-label>
-      <input
-        matInput
-        type="text"
-        id="date"
-        class="form-control"
-        name="date"
-        [ngModel]="meal?.date | date : 'dd/MM/yyyy'"
-        #date="ngModel"
-        required
-        [matDatepicker]="picker"
-      />
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-    <br />
-    <mat-form-field>
-      <mat-label for="name">Name:</mat-label>
-      <input
-        matInput
-        type="text"
-        id="name"
-        class="form-control"
-        name="name"
-        [ngModel]="meal?.name"
-        #name="ngModel"
-        required
-      />
-    </mat-form-field>
-    <br />
-    <mat-form-field>
-      <mat-label for="address">Address:</mat-label>
-      <input
-        matInput
-        type="text"
-        id="address"
-        class="form-control"
-        name="address"
-        [ngModel]="meal?.address"
-        #address="ngModel"
-        required
-      />
-    </mat-form-field>
-    <br />
-    <mat-form-field>
-      <mat-label for="phoneNumber">Phone Number:</mat-label>
-      <input
-        matInput
-        type="text"
-        id="phoneNumber"
-        class="form-control"
-        name="phoneNumber"
-        [ngModel]="meal?.phoneNumber"
-        #phoneNumber="ngModel"
-        required
-      />
-    </mat-form-field>
-    <div class="btnContainer">
-      <button class="" type="submit" [disabled]="!f.valid">Save</button>
-      <button class="" type="button" (click)="onCancel()">Cancel</button>
-    </div>
-  </form>
+<div class="page-container">
+  <div class="form-container">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <mat-form-field appearance="fill">
+        <mat-label for="date">Date</mat-label>
+        <input
+          matInput
+          [matDatepicker]="picker"
+          type="text"
+          id="date"
+          class="form-control"
+          name="date"
+          [ngModel]="meal?.date | date : 'dd/MM/yyyy'"
+          #date="ngModel"
+          required
+        />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label for="name">Name:</mat-label>
+        <input
+          matInput
+          type="text"
+          id="name"
+          class="form-control"
+          name="name"
+          [ngModel]="meal?.name"
+          #name="ngModel"
+          required
+        />
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label for="address">Address:</mat-label>
+        <input
+          matInput
+          type="text"
+          id="address"
+          class="form-control"
+          name="address"
+          [ngModel]="meal?.address"
+          #address="ngModel"
+          required
+        />
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label for="phoneNumber">Phone Number:</mat-label>
+        <input
+          matInput
+          type="text"
+          id="phoneNumber"
+          class="form-control"
+          name="phoneNumber"
+          [ngModel]="meal?.phoneNumber"
+          #phoneNumber="ngModel"
+          required
+        />
+      </mat-form-field>
+      <div class="btnContainer">
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          [disabled]="!f.valid"
+        >
+          Save
+        </button>
+        <button
+          mat-raised-button
+          color="warn"
+          type="button"
+          (click)="onCancel()"
+        >
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
 </div>

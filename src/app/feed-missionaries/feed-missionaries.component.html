@@ -2,14 +2,19 @@
 <div class="mealListWrapper">
   <div>
     <div>
-      <app-meal-item
-        *ngFor="let meal of mealsList; let i = index"
-        [meal]="meal"
-        [index]="i"
-      ></app-meal-item>
+      <cdk-virtual-scroll-viewport itemSize="100" class="container">
+        <app-meal-item
+          *cdkVirtualFor="let meal of mealsList; let i = index"
+          [meal]="meal"
+          [index]="i"
+          class="scrolling"
+        ></app-meal-item>
+      </cdk-virtual-scroll-viewport>
     </div>
   </div>
   <div>
-    <button routerLink="new">New Sign Up</button><router-outlet></router-outlet>
+    <button mat-raised-button color="primary" routerLink="new">
+      New Sign Up</button
+    ><router-outlet></router-outlet>
   </div>
 </div>

@@ -1,6 +1,5 @@
 .mealItem {
   margin: 15px;
-  border: 1px solid gray;
   width: fit-content;
   display: flex;
   flex-direction: row;
@@ -20,7 +19,6 @@
 .delete {
   display: flex;
   margin: auto;
-  padding: 10px;
   cursor: pointer;
-  font-weight: bold;
+  transform: scale(0.5);
 }
