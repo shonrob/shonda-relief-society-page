@@ -1,0 +1,4 @@
+.mealListWrapper {
+  display: flex;
+  flex-direction: row;
+}

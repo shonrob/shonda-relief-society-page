@@ -15,96 +15,38 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-// POST
-// router.post("/", async (req, res, next) => {
-//   try {
-//     const meal = new Meal({
-//       _id: "100",
-//       name: req.body.name,
-//       date: req.body.date,
-//       time: req.body.time,
-//       phoneNumber: req.body.phoneNumber,
-//       address: req.body.address,
-//     });
-//     // console.log(meal);
-//     meal.save().then((createdMeal) => {
-//       return res.status(201).json({
-//         message: "Meal added successfully.",
-//         meal: createdMeal,
-//       });
-//     });
-//   } catch (error) {
-//     return res.status(500).json({
-//       message: "An error occurred saving the meal.",
-//       error: error,
-//     });
-//   }
-// });
 // POST method to add a new schedule
 router.post("/", async (req, res, next) => {
   try {
     const newSchedule = await FeedMissionaries.create(req.body);
-    console.log("Post trying to figure this out", newSchedule);
     res.status(201).json({ newSchedule });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 });
 
-// PUT
-router.put("/:id", (req, res, next) => {
-  Meal.findOne({ id: req.params.id })
-    .then((meal) => {
-      (meal.name = req.body.name),
-        (meal.date = req.body.date),
-        (meal.time = req.body.time),
-        (meal.phoneNumber = req.body.phoneNumber),
-        (meal.address = req.body.address);
-      Meal.updateOne({ id: req.params.id }, meal)
-        .then((result) => {
-          res.status(204).json({
-            message: "Meal updated successfully",
-          });
-        })
-        .catch((error) => {
-          res.status(500).json({
-            message: "An error occurred in trying to update",
-            error: error,
-          });
-        });
-    })
-    .catch((error) => {
-      res.status(500).json({
-        message: "Meal not found.",
-        error: { meal: "Meal not found" },
-      });
-    });
+// PUT method to update an existing schedule
+router.put("/:id", async (req, res, next) => {
+  try {
+    const updatedSchedule = await FeedMissionaries.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true }
+    );
+    res.status(200).json({ updatedSchedule });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 });
 
-// DELETE
-
-router.delete("/:id", (req, res, next) => {
-  Meal.findOne({ id: req.params.id })
-    .then((meal) => {
-      Meal.deleteOne({ id: req.params.id })
-        .then((result) => {
-          res.status(204).json({
-            message: "Meal deleted successfully",
-          });
-        })
-        .catch((error) => {
-          res.status(500).json({
-            message: "An error occurred in trying to delete",
-            error: error,
-          });
-        });
-    })
-    .catch((error) => {
-      res.status(500).json({
-        message: "Meal not found.",
-        error: { meal: "Meal not found" },
-      });
-    });
+// DELETE method to delete an existing schedule
+router.delete("/:id", async (req, res, next) => {
+  try {
+    await FeedMissionaries.findByIdAndDelete(req.params.id);
+    res.status(200).json({ message: "Schedule deleted successfully" });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 });
 
 module.exports = router;

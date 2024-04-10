@@ -11,4 +11,10 @@ import { FeedMissionariesService } from '../feed-missionaries.service';
 export class MealItemComponent {
   @Input() meal: Meal;
   @Input() id: string;
+
+  constructor(private feedMissionariesService: FeedMissionariesService) {}
+
+  deleteMe() {
+    this.feedMissionariesService.deleteMeal(this.meal);
+  }
 }
