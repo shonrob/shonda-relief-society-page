@@ -48,14 +48,11 @@ export class FeedMissionariesService {
       return;
     }
     this.httpClient
-      .post<{ message: string; meal: Meal }>(this.apiUrl, newMeal, {
+      .post<any>(this.apiUrl, newMeal, {
         headers: this.headers,
       })
       .subscribe((responseData) => {
-        // add new meal to meals
-        console.log('Here I Am', responseData.meal);
-        this.meals.push(responseData.meal);
-        this.sortAndSend();
+        this.getMissionaryMeals();
       });
   }
 
