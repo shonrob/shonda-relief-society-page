@@ -1,0 +1,14 @@
+<mat-dialog-content>
+  <p>Are you sure you want to delete this item?</p>
+</mat-dialog-content>
+<mat-dialog-actions class="buttonContainer">
+  <button mat-button (click)="onCancel()" class="cancelButton">Cancel</button>
+  <button
+    mat-button
+    (click)="onConfirm()"
+    cdkFocusInitial
+    class="confirmButton"
+  >
+    Confirm
+  </button>
+</mat-dialog-actions>
