@@ -63,6 +63,6 @@ export class MealFormComponent {
 
   // cancel the form and route back to the main meals component.
   onCancel() {
-    this.router.navigate(['../'], { relativeTo: this.route });
+    this.router.navigate(['/feedmissionaries']);
   }
 }
