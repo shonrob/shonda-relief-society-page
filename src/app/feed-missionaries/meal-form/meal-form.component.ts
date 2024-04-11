@@ -40,6 +40,14 @@ export class MealFormComponent {
       }
       this.editMode = true;
       this.meal = JSON.parse(JSON.stringify(this.originalMeal));
+
+      const dateObj = new Date(this.meal.date);
+      const month = dateObj.getMonth() + 1;
+      const date = dateObj.getDate() + 1;
+      const year = dateObj.getFullYear();
+
+      const displayDate = `${month}/${date}/${year}`;
+      this.meal.date = displayDate;
     });
   }
 
