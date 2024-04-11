@@ -72,12 +72,11 @@ export class FeedMissionariesService {
 
     // update database
     this.httpClient
-      .put('http://localhost:3000/meals/' + originalMeal._id, newMeal, {
+      .put(`${this.apiUrl}/update/${originalMeal._id}`, newMeal, {
         headers: this.headers,
       })
       .subscribe((response: Response) => {
-        this.meals[pos] = newMeal;
-        this.sortAndSend();
+        this.getMissionaryMeals();
       });
   }
 

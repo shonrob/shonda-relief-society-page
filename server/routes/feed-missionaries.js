@@ -26,7 +26,7 @@ router.post("/", async (req, res, next) => {
 });
 
 // PUT method to update an existing schedule
-router.put("/:id", async (req, res, next) => {
+router.put("/update/:id", async (req, res, next) => {
   try {
     const updatedSchedule = await FeedMissionaries.findByIdAndUpdate(
       req.params.id,
