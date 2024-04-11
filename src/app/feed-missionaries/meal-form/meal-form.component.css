@@ -1,5 +1,17 @@
 .form-container {
   border: 2px solid gray;
   padding: 10px;
-  width: fit-content;
+  width: 400px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.btnContainer {
+  text-align: end;
+}
+
+.btnContainer button {
+  margin: 5px;
 }

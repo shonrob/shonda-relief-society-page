@@ -1,7 +1,7 @@
 <!-- <p>feed-missionaries works!</p> -->
 <div class="mealListWrapper">
   <div>
-    <div>
+    <div class="scroll-wrapper">
       <cdk-virtual-scroll-viewport itemSize="100" class="container">
         <app-meal-item
           *cdkVirtualFor="let meal of mealsList; let i = index"
@@ -13,7 +13,12 @@
     </div>
   </div>
   <div>
-    <button mat-raised-button color="primary" routerLink="new">
+    <button
+      mat-raised-button
+      color="primary"
+      routerLink="new"
+      class="signUpButton"
+    >
       New Sign Up</button
     ><router-outlet></router-outlet>
   </div>

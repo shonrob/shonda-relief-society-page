@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Meal } from '../feed-missionaries.model';
 import { FeedMissionariesService } from '../feed-missionaries.service';
+import moment from 'moment';
 
 @Component({
   selector: 'app-meal-form',
@@ -45,10 +46,14 @@ export class MealFormComponent {
   // called when the user selects the save button and submits the form. It will either add the new meal to the meal list or update the existing doucment in the meal List.
   onSubmit(form: NgForm) {
     let value = form.value; //retrieving the value the user inputs in the forms field
+
+    const dateObject = new Date(value.date);
+    const dateWithoutTimestamp = moment(dateObject).format('MM/DD/YYYY');
+
     let newMeal = new Meal(
       null,
       value.name,
-      value.date,
+      dateWithoutTimestamp,
       '5:00pm',
       value.phoneNumber,
       value.address

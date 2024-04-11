@@ -1,15 +1,15 @@
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { MatNativeDateModule } from '@angular/material/core';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatInputModule } from '@angular/material/input';
-import { BrowserModule } from '@angular/platform-browser';
-import { TabMenuModule } from 'primeng/tabmenu';
-
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { BrowserModule } from '@angular/platform-browser';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { TabMenuModule } from 'primeng/tabmenu';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FeedMissionariesComponent } from './feed-missionaries/feed-missionaries.component';
@@ -17,7 +17,6 @@ import { MealFormComponent } from './feed-missionaries/meal-form/meal-form.compo
 import { MealItemComponent } from './feed-missionaries/meal-item/meal-item.component';
 import { HeadersComponent } from './headers/headers.component';
 import { HomeComponent } from './home/home.component';
-import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [

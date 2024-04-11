@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const feedMissionariesSchema = mongoose.Schema({
   _id: { type: mongoose.Schema.Types.ObjectId },
   name: { type: String, required: true },
-  date: { type: Date },
+  date: { type: String },
   time: { type: String },
   phoneNumber: { type: String },
   address: { type: String },

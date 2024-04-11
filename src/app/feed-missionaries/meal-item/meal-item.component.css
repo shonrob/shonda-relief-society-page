@@ -1,19 +1,18 @@
 .mealItem {
-  margin: 15px;
-  width: fit-content;
   display: flex;
   flex-direction: row;
+  width: 100%;
 }
 
 .mealItem a {
-  padding: 10px;
-  width: fit-content;
   display: flex;
+  padding: 8px;
   flex-direction: column;
+  flex: 1;
 }
 
-.mealItem div {
-  width: fit-content;
+.mealItem a:hover {
+  background-color: rgb(241, 240, 240);
 }
 
 .delete {
