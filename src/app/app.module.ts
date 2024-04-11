@@ -17,6 +17,8 @@ import { MealFormComponent } from './feed-missionaries/meal-form/meal-form.compo
 import { MealItemComponent } from './feed-missionaries/meal-item/meal-item.component';
 import { HeadersComponent } from './headers/headers.component';
 import { HomeComponent } from './home/home.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ToastComponent } from './toast/toast.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { HomeComponent } from './home/home.component';
     HomeComponent,
     MealFormComponent,
     MealItemComponent,
+    ToastComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,6 +42,7 @@ import { HomeComponent } from './home/home.component';
     MatButtonModule,
     ScrollingModule,
     MatIconModule,
+    MatDialogModule,
   ],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],
